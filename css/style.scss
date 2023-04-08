@@ -21,7 +21,6 @@
 
 html {
     font-size: 62.5%;
-    overflow: hidden;
 }
 
 body {
@@ -34,7 +33,7 @@ section {
     padding: 10rem 9% 2rem;
 }
 
-.header {
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -45,7 +44,11 @@ section {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    transition: all 0.5s;
+
+    &.scrolled{
+        --bg: #f0ead2;
+        --color: #6c584c;
+    }
 }
 
 .logo {
@@ -55,45 +58,18 @@ section {
     cursor: default;
 }
 
-.navbar {
-    font-size: 3rem;
-    color: var(--text-color);
-    font-weight: 600;
-    cursor: default;
-}
+nav{
+    a {
+        font-size: 2rem;
+        color: var(--text-color);
+        margin-left: 4rem;
+        transition: .3s;
+    }
 
-.navbar a {
-    font-size: 2rem;
-    color: var(--text-color);
-    margin-left: 4rem;
-    transition: .3s;
-}
-
-.navbar a:hover, a.active {
-    color: var(--main-color);
-}
-
-.light_mode {
-  font-size: 3rem;
-  color: var(--second-bg-color);
-  font-weight: 600;
-  cursor: default;
-}
-
-.light_mode a {
-  font-size: 2rem;
-  color: var(--second-bg-color);
-  margin-left: 4rem;
-  transition: .3s;
-}
-
-.light_mode a:hover {
-  color: var(--bg-color);
-}
-
-.light_mode a.active {
-  color: var(--bg-color);
-}
+    a:hover, a.active {
+        color: var(--main-color);
+    }
+  }
 
 #menu-icon {
     font-size: 3.6rem;
@@ -268,21 +244,5 @@ span {
     50%,
     100% {
         bottom: 100%;
-    } 
-}
-
-.about {
-  background: var(--second-bg-color);
-}
-
-.tech {
-  background: var(--main-color);
-}
-
-.certificate {
-  background: var(--special);
-}
-
-.contact {
-  background: var(--text-color);
+    }
 }
